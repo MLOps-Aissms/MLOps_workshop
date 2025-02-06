@@ -20,8 +20,9 @@ estimators:
       alpha: 0.9
       l1_ratio: 0.6
 
-model_path = model/models.joblib
+model_path : model/models.joblib
 
 reports:
   params: reports/params.json
-  score: report/params
+  score: report/scores.json
+  

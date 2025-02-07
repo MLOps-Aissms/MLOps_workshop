@@ -1,7 +1,7 @@
 base:
   project_name: MLOps_Workshop
   random_state: 20
-  target: charges
+  target_col: charges
 
 data_source:
   raw_data: data/raw/insurance.csv

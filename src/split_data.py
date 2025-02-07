@@ -22,6 +22,8 @@ def split_data(config_path):
     train.to_csv(train_data_path,sep=",",index=False,encoding="utf-8")
     test.to_csv(test_data_path,sep=",",index=False,encoding="utf-8")
 
+    
+
 
 
 

@@ -15,9 +15,9 @@ split_data:
   test_size: 0.2
 
 estimators:
-  ElasticNet: 
+  RandomForestClassifier: 
     params: 
-      alpha: 0.9
+      n_estimators: 80
       l1_ratio: 0.3
 
 model_path : models/models.joblib

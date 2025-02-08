@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+    command: >
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python maange.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000  # host:container
+    volumes:
+      - ./app:/app
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_DB=app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mlops
+    depends_on:
+      - pg
+  pg:
+    image: pgadmin4/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=rikukshirsagar.com
+      - PGADMIN_DEFAULT_PASSWORD=123456
